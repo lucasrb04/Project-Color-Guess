@@ -35,7 +35,17 @@ ballContainer.addEventListener('click', (event) => {
   }
 });
 
-window.onload = function onload() {
+function reset() {
+  const answer = document.getElementById('answer');
+  answer.innerText = 'Escolha uma cor';
   ballColor();
   colorToBeGess();
+}
+
+const resetBtn = document.querySelector('#reset-game');
+resetBtn.addEventListener('click', () => {
+  reset();
+});
+window.onload = function onload() {
+  reset();
 };
