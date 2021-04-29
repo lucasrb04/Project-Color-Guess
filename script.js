@@ -27,11 +27,16 @@ const ballContainer = document.querySelector('#ball-container');
 ballContainer.addEventListener('click', (event) => {
   const hidden = document.getElementById('hidden');
   const answer = document.getElementById('answer');
+  const score = document.getElementById('score');
+  let newScore = 0;
   const ballSelected = event.target.style.backgroundColor;
   if (ballSelected === hidden.innerText) {
     answer.innerText = 'Acertou!';
+    newScore = +score.innerText + 3;
+    score.innerText = newScore;
   } else {
     answer.innerText = 'Errou! Tente novamente!';
+    score.innerHTML = '0';
   }
 });
 
